@@ -8,7 +8,7 @@ start:
      call disp     ; then, display it
      mov dl,':' 
      mov ah,2 
-     int 21h       ; to display “ : “ in between HH and MM
+     int 21h       ; to display â€œ : â€œ in between HH and MM
      mov al,cl     ; same thing with minutes
      call hex_bcd
      call disp
@@ -41,7 +41,7 @@ hex_bcd proc       ; procedure to convert hex to bcd
      mov ch,0
      mov al,0
 next:
-     add al,1
+     add al,1  ;for decimal adjust
      daa
      loop next
      pop cx
